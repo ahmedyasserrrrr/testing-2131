@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button id="language-toggle">عربي</button>
+        <nav>
+            <ul>
+                <li><a href="page1.html" class="nav-link" data-en="Home" data-ar="الصفحة الرئيسية">Home</a></li>
+                <li><a href="page2.html" class="nav-link" data-en="About" data-ar="عن الموقع">About</a></li>
+                <!-- أضف المزيد من الروابط للصفحات الأخرى -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 data-en="Welcome to our website" data-ar="مرحباً بكم في موقعنا">Welcome to our website</h1>
+        <p data-en="This is the English version of the website." data-ar="هذه النسخة العربية من الموقع.">This is the English version of the website.</p>
+    </main>
+    <script src="script.js"></script>
+
+
+    <div class="sidenav">
+        <a href="#"   onclick="redirectToPath()"  class="closebtn">&times;</a>
+        <a href="#"  onclick="redirectToPath()" >الرئيسية</a>
+        <a href="#"  onclick="redirectToPath()" > قصتنا</a>
+        <a href="# "  onclick="redirectToPath()" >الاراء</a>
+        <a href="#"  onclick="redirectToPath()" >الدعم الفني</a>
+        <a href="#"  onclick="redirectToPath()" > منتجاتنا</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidenav = document.querySelector('.sidenav');
+            const navIcons = document.querySelector('.navbar-toggler');
+            const closeBtn = document.querySelector('.closebtn');
+        
+            // فتح القائمة الجانبية
+            navIcons.addEventListener('click', function() {
+                sidenav.style.width = '300px';
+            });
+        
+            // إغلاق القائمة الجانبية
+            closeBtn.addEventListener('click', function() {
+                sidenav.style.width = '0';
+            });
+        });
+        </script>
+         <style>
+          
+           
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 999;
+                top: 0;
+                right: 0;
+                background-color: white;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                float: right;
+                text-align: right;
+
+            }
+
+.sidenav a {
+ /* أنماط الرابط الفردي هنا */
+ display: block;
+ padding: 10px 15px;
+ text-decoration: none;
+ font-size: 18px;
+ color: #4C4D49;
+ transition: 0.3s;
+}
+    
+    
+    
+            .sidenav a:hover {
+                color: #0A284E ;
+            }
+    
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                left: 25px;
+                font-size: 36px;
+                margin-right: 50px;
+            }
+    
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+            
+    
+            .nav-icons {
+                display: none; /* يتم إخفاء الأيقونة في البداية */
+            }
+    
+            .nav-icons.active {
+                display: block; /* عرض الأيقونة عند النقر عليها */
+                cursor: pointer;
+            }
+        </style>
+</body>
+</html>

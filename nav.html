@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <section class="services">
+        <h2 style="color: 3b8388;">خدماتنا</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="images/office.png" width="50px" alt="">
+                <h3>تصميم وتنفيذ أعمال البنية التحتية</h3>
+            </div>
+            <div class="service-item">
+                <img src="images/office-building.png" width="50px" alt="">
+                <h3>التصاميم الهندسية والإنشائية</h3>
+            </div>
+            <div class="service-item">
+                <img src="images/maintenance.png" width="50px" alt="">
+                <h3>إشراف وتنفيذ أعمال الصيانة</h3>
+            </div>
+            <div class="service-item">
+                <img src="images/skyscraper.png" width="50px" alt="">
+                <h3>تصميم وتنفيذ أعمال البنية التحتية</h3>
+            </div>
+            <div class="service-item">
+                <img src="images/office (1).png" width="50px" alt="">
+                <h3>التصاميم الهندسية والإنشائية</h3>
+            </div>
+            <div class="service-item">
+                <img src="images/service.png" width="50px" alt="">
+                <h3>إشراف وتنفيذ أعمال الصيانة</h3>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    
+.service-item {
+    opacity: 0; /* يبدأ العنصر بشفافية صفر */
+    transform: translateX(-50px); /* يبدأ العنصر بانتقال إلى اليسار بمقدار 50 بكسل */
+    transition: opacity 0.5s ease, transform 1s ease; /* تأثيرات التدرج للشفافية والانتقال */
+}
+
+/* تحديد التأثيرات عندما يتم إظهار العناصر */
+.service-item.show {
+    opacity: 1; /* زيادة الشفافية إلى القيمة الكاملة */
+    transform: translateX(0); /* إزالة التحرك الأفقي */
+}
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card {
+    width: 300px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+
+  }
+
+  /* تحديد التأثير الظاهر عندما يكون الكارد مرئيًا */
+  .card.show {
+    opacity: 1;
+  }
+.services {
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.services h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    border: 1px solid #3b8388;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-item img {
+    margin-bottom: 10px;
+    color: #3b8388;
+}
+
+.service-item h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #3b8388;
+
+}
+
+@media (min-width: 600px) {
+    .service-item {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+@media (min-width: 900px) {
+    .service-item {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+ <script>
+    const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.service-item').forEach(item => {
+    observer.observe(item);
+});
+ </script>
+
+
+<style>
+
+</style>
